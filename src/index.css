@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #01030a;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100svh;
+  font-family: Arial, sans-serif;
+  color: #f4f8ff;
+  isolation: isolate;
+}
+
+/* A fixed layer keeps the gradient behind every future section. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 25% 30%, #061735 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 75%, #030b20 0%, transparent 60%),
+    linear-gradient(135deg, #000105, #010611 50%, #000208);
+  background-size: 180% 180%;
+  animation: blue-drift 22s ease-in-out infinite alternate;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+@keyframes blue-drift {
+  from {
+    background-position: 0% 20%;
+  }
+  to {
+    background-position: 100% 80%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+

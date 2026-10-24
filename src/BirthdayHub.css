@@ -1,0 +1,52 @@
+.birthday-hub { width: 100%; max-width: 800px; text-align: center; margin: auto; }
+.birthday-hub h1 { margin-top: 24px; font-size: clamp(36px, 9vw, 52px); }
+.birthday-hub > p { color: #a5b9d6; font-size: 14px; line-height: 1.9; }
+.birthday-hub a { color: #b8d7ff; }
+.birthday-hub .hub-back { width: auto; margin: 0 0 30px; background: transparent; border: 0; box-shadow: none; color: #aac5e9; }
+.hub-links { display: grid; gap: 20px; max-width: 500px; margin: 35px auto; }
+.hub-links button { display: block; margin: 0; padding: 28px 20px; background: linear-gradient(135deg, #163b6d99, #07162bc9); border: 1px solid #9ac5ff45; border-radius: 22px; }
+.hub-links button > span { font-size: 28px; color: #b9d8ff; }
+.hub-links h2 { font: 25px Georgia, serif; }
+.hub-links p { font-size: 12px; color: #a3b8d5; }
+.birthday-letter { padding: 25px; background: #10244788; border: 1px solid #8dbaff38; border-radius: 20px; text-align: left; }
+.birthday-letter p { white-space: pre-wrap; font: 17px/1.9 Georgia, serif; }
+.library-genres { display: flex; flex-wrap: wrap; gap: 8px; margin: 25px 0; justify-content: center; }
+.library-genres button { margin: 0; width: auto; min-height: 44px; padding: 10px 12px; font-size: 11px; background: #0b1d39; box-shadow: none; }
+.library-genres button[aria-pressed="true"] { background: #245eb3; border-color: #b8d8ff; }
+.library-search { padding: 18px; text-align: left; }
+.library-search button { margin-top: 12px; }
+.birthday-hub .library-note { font-size: 11px; color: #97adcd; line-height: 1.8; margin: 22px 0; }
+.book-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; text-align: left; }
+.book-card { min-width: 0; padding: 12px; display: flex; flex-direction: column; background: #0b1d35b3; border: 1px solid #88b8f32b; border-radius: 15px; }
+.book-cover { aspect-ratio: 2 / 3; padding: 18px 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; background: linear-gradient(140deg, #244e80, #09182d); text-align: center; border: 1px solid #99c6ff4d; box-shadow: inset 5px 0 #0003; }
+.book-cover small { font-size: 7px; letter-spacing: 1px; color: #b7cce8; }
+.book-cover strong { font: 400 clamp(14px, 4vw, 22px)/1.35 Georgia, serif; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.book-cover span { color: #bad7ff; }
+.book-card h2 { font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; margin: 14px 0 5px; }
+.book-card > p { font-size: 11px; line-height: 1.6; color: #a0b5d1; margin: 0 0 14px; }
+.book-card a { margin-top: auto; min-height: 44px; padding: 10px 4px; display: grid; place-items: center; font-size: 11px; border-radius: 9px; border: 1px solid #89b7f34d; background: #19488066; text-decoration: none; }
+.library-pagination { display: flex; gap: 12px; }
+.birthday-hub button:disabled { opacity: .4; cursor: default; }
+@media (min-width: 650px) { .book-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.shelf-heading { font: 400 28px Georgia, serif; text-align: left; margin: 30px 0 10px; }
+.book-grid { padding-bottom: 10px; }
+.birthday-hub button:disabled { pointer-events: none; }
+.birthday-hub .library-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  margin: 26px 0;
+  padding: 17px 14px;
+  background: linear-gradient(135deg, #1d4d893d, #10274b66);
+  border: 1px solid #91bfff59;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #367bd915;
+  color: #d3e7ff;
+  font-size: 13px;
+}
+.library-scroll-hint > span:first-child { font-size: 8px; letter-spacing: 2px; color: #9fbfe8; }
+.library-scroll-hint .scroll-arrow { font-size: 22px; animation: scroll-nudge 1.8s ease-in-out infinite; }
+#book-shelves { scroll-margin-top: 24px; }
+@keyframes scroll-nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@media (prefers-reduced-motion: reduce) { .library-scroll-hint .scroll-arrow { animation: none; } }
